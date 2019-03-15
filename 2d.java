@@ -104,38 +104,17 @@ class Solution {
   private static List<List<Integer>> getInput(){
     // List<List<Integer>> input = new ArrayList(Arrays.asList(Arrays.asList(), Arrays.asList(1,2,3), Arrays.asList(4,5), Arrays.asList(), Arrays.asList(), Arrays.asList(6), Arrays.asList(7,8), Arrays.asList(), Arrays.asList(9), Arrays.asList(10), Arrays.asList()));
     List<List<Integer>> input = new ArrayList<>();
-    input.add(new ArrayList<Integer>(){{
-    }});
-    input.add(new ArrayList<Integer>(){{
-      add(1);
-      add(2);
-      add(3);
-    }});
-    input.add(new ArrayList<Integer>(){{
-      add(4);
-      add(5);
-    }});
-    input.add(new ArrayList<Integer>(){{
-    }});
-    input.add(new ArrayList<Integer>(){{
-    }});
-    input.add(new ArrayList<Integer>(){{
-      add(6);
-    }});
-    input.add(new ArrayList<Integer>(){{
-      add(7);
-      add(8);
-    }});
-    input.add(new ArrayList<Integer>(){{
-    }});
-    input.add(new ArrayList<Integer>(){{
-      add(9);
-    }});
-    input.add(new ArrayList<Integer>(){{
-      add(10);
-    }});
-    input.add(new ArrayList<Integer>(){{
-    }});
+    input.add(new ArrayList<Integer>(){{}});
+    input.add(new ArrayList<Integer>(){{add(1);add(2);add(3);}});
+    input.add(new ArrayList<Integer>(){{add(4);add(5);}});
+    input.add(new ArrayList<Integer>(){{}});
+    input.add(new ArrayList<Integer>(){{}});
+    input.add(new ArrayList<Integer>(){{add(6);}});
+    input.add(new ArrayList<Integer>(){{add(7);add(8);}});
+    input.add(new ArrayList<Integer>(){{}});
+    input.add(new ArrayList<Integer>(){{add(9);}});
+    input.add(new ArrayList<Integer>(){{add(10);}});
+    input.add(new ArrayList<Integer>(){{}});
     
     return input;
   }

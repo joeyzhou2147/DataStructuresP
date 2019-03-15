@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.lang.*;
 
 // boolean hasNext()
 //     return true if there is another element in the whole structure
@@ -103,7 +102,41 @@ class Solution {
   }
   
   private static List<List<Integer>> getInput(){
-    List<List<Integer>> input = new ArrayList<>(Arrays.asList(Arrays.asList(), Arrays.asList(1,2,3), Arrays.asList(4,5), Arrays.asList(), Arrays.asList(), Arrays.asList(6), Arrays.asList(7,8), Arrays.asList(), Arrays.asList(9), Arrays.asList(10), Arrays.asList()));
+    // List<List<Integer>> input = new ArrayList(Arrays.asList(Arrays.asList(), Arrays.asList(1,2,3), Arrays.asList(4,5), Arrays.asList(), Arrays.asList(), Arrays.asList(6), Arrays.asList(7,8), Arrays.asList(), Arrays.asList(9), Arrays.asList(10), Arrays.asList()));
+    List<List<Integer>> input = new ArrayList<>();
+    input.add(new ArrayList<Integer>(){{
+    }});
+    input.add(new ArrayList<Integer>(){{
+      add(1);
+      add(2);
+      add(3);
+    }});
+    input.add(new ArrayList<Integer>(){{
+      add(4);
+      add(5);
+    }});
+    input.add(new ArrayList<Integer>(){{
+    }});
+    input.add(new ArrayList<Integer>(){{
+    }});
+    input.add(new ArrayList<Integer>(){{
+      add(6);
+    }});
+    input.add(new ArrayList<Integer>(){{
+      add(7);
+      add(8);
+    }});
+    input.add(new ArrayList<Integer>(){{
+    }});
+    input.add(new ArrayList<Integer>(){{
+      add(9);
+    }});
+    input.add(new ArrayList<Integer>(){{
+      add(10);
+    }});
+    input.add(new ArrayList<Integer>(){{
+    }});
+    
     return input;
   }
 }
@@ -114,7 +147,7 @@ class TwoD implements Iterator<Integer>{
   
   public TwoD(List<List<Integer>> vec2d){
     rowIter = vec2d.iterator();
-    colIter = null;
+    colIter = Collections.emptyIterator();
   }
   
   @Override
@@ -125,7 +158,7 @@ class TwoD implements Iterator<Integer>{
   
   @Override
   public boolean hasNext(){
-    while((colIter == null || !colIter.hasNext()) && rowIter.hasNext()){
+    while ((colIter == null || !colIter.hasNext()) && rowIter.hasNext()){
       colIter = rowIter.next().iterator();
     }
     return colIter != null && colIter.hasNext();
@@ -133,12 +166,10 @@ class TwoD implements Iterator<Integer>{
   
   @Override
   public void remove(){
-    if(colIter == null) throw new RuntimeException();
-    // colIter.remove();//Arrays.asList()
-    while(colIter == null && rowIter.hasNext()){
+    while (colIter == null && rowIter.hasNext()){
       colIter = rowIter.next().iterator();
     }
-    if(colIter != null && colIter.hasNext())
+    if(colIter != null)
       colIter.remove();
   }
   
